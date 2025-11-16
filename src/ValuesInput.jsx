@@ -125,7 +125,6 @@ const CellInput = styled.input`
 	}
 `
 
-// ------------------- COMPONENT -------------------
 function ValuesInput({ table, onSetTable }) {
 	const [paramsCountStr, setParamsCountStr] = useState('3')
 	const [funcsCountStr, setFuncsCountStr] = useState('2')
