@@ -1,8 +1,3 @@
-/** Main.jsx
- * Современная версия главного компонента приложения.
- * Визуально и стилистически согласован с Answer.jsx.
- */
-
 import { useState } from 'react'
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
@@ -12,8 +7,6 @@ import Answer from './Answer'
 import ValuesInput from './ValuesInput'
 import FormulasInput from './FormulasInput'
 import { backRequest } from './request'
-
-/* --------------------------- СТИЛИ --------------------------- */
 
 const PageWrap = styled('div')`
 	font-family: Inter, system-ui, sans-serif;
@@ -106,8 +99,6 @@ const ButtonArea = styled('div')`
 	margin-top: 16px;
 `
 
-/* ------------------------- КОМПОНЕНТ ------------------------- */
-
 function Main({ inputType, onBack }) {
 	const [table, setTable] = useState(null)
 	const [answer, setAnswer] = useState(null)
@@ -115,7 +106,6 @@ function Main({ inputType, onBack }) {
 	const solve = () => {
 		if (!table) return
 
-		// Проверка валидности
 		for (let i = 0; i < table.lines.length; i++) {
 			const line = table.lines[i]
 			for (let j = 0; j < line.fs.length; j++) {
@@ -131,7 +121,6 @@ function Main({ inputType, onBack }) {
 			}
 		}
 
-		// Подготовка данных
 		const fs = Array.from({ length: table.fsCount }, () => [])
 		for (const line of table.lines) {
 			for (let j = 0; j < line.fs.length; j++) {
