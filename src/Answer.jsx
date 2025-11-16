@@ -142,7 +142,6 @@ const Badge = styled('span')`
 	font-size: 0.88rem;
 `
 
-/* цветовые акценты для классов */
 const classColors = {
 	K0: 'linear-gradient(90deg,#fee2e2,#fff)', 
 	K1: 'linear-gradient(90deg,#ecfdf5,#fff)', 
@@ -151,7 +150,7 @@ const classColors = {
 	KL: 'linear-gradient(90deg,#fff7ed,#fff)', 
 }
 
-/* иконки/лейблы для классов */
+
 const ClassIcon = {
 	K0: <XCircle size={16} color='#ef4444' />,
 	K1: <CheckCircle size={16} color='#16a34a' />,
@@ -321,7 +320,6 @@ export default function Answer({ answer }) {
 				: []
 			const contains = tria.BelongsToClass ? '\\in' : '\\notin'
 
-			// triangle rows rendering
 			const triangleTable = (
 				<table
 					style={{
@@ -625,7 +623,6 @@ export default function Answer({ answer }) {
 				<Layers size={18} color='#2563eb' /> Решение
 			</SectionTitle>
 
-			{/* K0 */}
 			<div>
 				<SectionTitle style={{ fontSize: '1rem' }}>
 					<XCircle size={16} color='#ef4444' /> Класс <InlineMath math='K_0' />
@@ -633,7 +630,7 @@ export default function Answer({ answer }) {
 				{getK0Result(answer.results)}
 			</div>
 
-			{/* K1 */}
+			
 			<div>
 				<SectionTitle style={{ fontSize: '1rem' }}>
 					<CheckCircle size={16} color='#16a34a' /> Класс{' '}
@@ -642,7 +639,7 @@ export default function Answer({ answer }) {
 				{getK1Result(answer.results)}
 			</div>
 
-			{/* KM */}
+			
 			<div>
 				<SectionTitle style={{ fontSize: '1rem' }}>
 					<Layers size={16} color='#2563eb' /> Класс <InlineMath math='K_m' />
@@ -650,7 +647,7 @@ export default function Answer({ answer }) {
 				{getKMResult(answer.results)}
 			</div>
 
-			{/* KS */}
+			
 			<div>
 				<SectionTitle style={{ fontSize: '1rem' }}>
 					<Zap size={16} color='#7c3aed' /> Класс <InlineMath math='K_s' />
@@ -658,7 +655,7 @@ export default function Answer({ answer }) {
 				{getKSResult(answer.results)}
 			</div>
 
-			{/* KL */}
+			
 			<div>
 				<SectionTitle style={{ fontSize: '1rem' }}>
 					<Calculator size={16} color='#f97316' /> Класс{' '}
@@ -668,7 +665,7 @@ export default function Answer({ answer }) {
 				{getKLResultTriangleMethod(answer.results)}
 			</div>
 
-			{/* Аналитический метод (если есть) */}
+			
 			{answer.results &&
 				answer.results.length > 0 &&
 				answer.results[0].KLResult &&
